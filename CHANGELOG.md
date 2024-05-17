@@ -3,6 +3,30 @@
 Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) convention.
 
+## [0.10.0] - 2024-04-09
+
++ Add - ROI mask creation widget
++ Update documentation for using the included widgets in the package
+
+## [0.9.5] - 2024-03-22
+
++ Add - pytest
++ Fix - minor bugfix in tests
++ Update - clean up notebook
++ Update - Elements installed directly from GitHub instead of PyPI
++ Update - Black formatting `tests`
+
+## [0.9.4] - 2024-02-05
+
++ Fix - bugfix ingesting field xyz for mesoscan (multiROI) from ScanImage
++ Update - make `output_dir` if not exist for `task_mode="trigger"`
+
+## [0.9.3] - 2024-01-29
+
++ Update - DataJoint Elements to install from GitHub instead of PyPI
++ Fix - `element-interface` required during package installation
++ Fix - apply formatting with `black` across the repository
+
 ## [0.9.2] - 2024-01-10
 
 + Fix - Imports and attribute values in notebooks to resolve DataJoint errors
@@ -190,6 +214,10 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 + Add - `scan` and `imaging` modules
 + Add - Readers for `ScanImage`, `ScanBox`, `Suite2p`, `CaImAn`
 
+[0.10.0]: https://github.com/datajoint/element-calcium-imaging/releases/tag/0.10.0
+[0.9.5]: https://github.com/datajoint/element-calcium-imaging/releases/tag/0.9.5
+[0.9.4]: https://github.com/datajoint/element-calcium-imaging/releases/tag/0.9.4
+[0.9.3]: https://github.com/datajoint/element-calcium-imaging/releases/tag/0.9.3
 [0.9.2]: https://github.com/datajoint/element-calcium-imaging/releases/tag/0.9.2
 [0.9.1]: https://github.com/datajoint/element-calcium-imaging/releases/tag/0.9.1
 [0.9.0]: https://github.com/datajoint/element-calcium-imaging/releases/tag/0.9.0

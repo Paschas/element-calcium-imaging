@@ -9,6 +9,7 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, "README.md"), "r") as f:
     long_description = f.read()
 
+
 with open(path.join(here, pkg_name, "version.py")) as f:
     exec(f.read())
 
@@ -38,16 +39,18 @@ setup(
         "ipykernel>=6.0.1",
         "ipywidgets",
         "plotly",
+        "dash-extensions",
+        "scikit-image",
+        "element-interface @ git+https://github.com/datajoint/element-interface.git",
     ],
     extras_require={
         "caiman_requirements": [caiman_requirements],
         "caiman": ["caiman @ git+https://github.com/datajoint/CaImAn.git"],
         "elements": [
-            "element-animal>=0.1.8",
-            "element-event>=0.2.3",
-            "element-interface>=0.6.0",
-            "element-lab>=0.3.0",
-            "element-session>=0.1.5",
+            "element-animal @ git+https://github.com/datajoint/element-animal.git",
+            "element-event @ git+https://github.com/datajoint/element-event.git",
+            "element-lab @ git+https://github.com/datajoint/element-lab.git",
+            "element-session @ git+https://github.com/datajoint/element-session.git",
         ],
         "extract": ["matlabengine", "scipy"],
         "nd2": ["nd2"],
