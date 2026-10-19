@@ -5,9 +5,7 @@ corresponding table in the database.  Within the pipeline, Element Calcium Imagi
 connects to upstream Elements including Lab, Animal, Session, and Event. For more 
 detailed documentation on each table, see the API docs for the respective schemas.
 
-The Element is composed of two main schemas, `scan` and `imaging`. To handle
-several use cases of this pipeline, we have designed two alternatives to the `imaging` 
-schema, including `imaging_no_curation` and `imaging_preprocess`.
+The Element is composed of two main schemas, `scan` and `imaging`.
 
 ## Diagrams
 
@@ -15,29 +13,21 @@ schema, including `imaging_no_curation` and `imaging_preprocess`.
 
 - Multiple scans are acquired during each session and each scan is processed independently.
 
-     ![pipeline](https://raw.githubusercontent.com/datajoint/element-calcium-imaging/main/images/pipeline_imaging.svg)
-
-### `imaging_no_curation` module
-
-- Same as the `imaging` module, but without the `Curation` table.
-
      ![pipeline](https://raw.githubusercontent.com/datajoint/element-calcium-imaging/main/images/pipeline_imaging_no_curation.svg)
-
-### `imaging_preprocess` module
-
-- Same as the `imaging` module, and additional pre-processing steps can be performed on each scan prior to processing with Suite2p or CaImAn.
-
-     ![pipeline](https://raw.githubusercontent.com/datajoint/element-calcium-imaging/main/images/pipeline_imaging_preprocess.svg)
 
 ### `multi-scan-processing` branch
 
-- The processing pipeline is typically performed on a per-scan basis, however, depending on the nature of the research questions, different labs may opt to perform processing/segmentation on a concatenated set of data from multiple scans. To this end, we have extended the Calcium Imaging Element and provided a design version capable of supporting a multi-scan processing scheme.
+- The processing pipeline is typically performed on a per-scan basis, however, depending
+  on the nature of the research questions, different labs may opt to perform
+  processing/segmentation on a concatenated set of data from multiple scans. To this
+  end, we have extended the Calcium Imaging Element and provided a design version
+  capable of supporting a multi-scan processing scheme.
 
 ## Table descriptions
 
 ### `lab` schema
 
-- For further details see the [lab schema API docs](https://datajoint.com/docs/elements/element-lab/latest/api/element_lab/lab/)
+- For further details see the [lab schema API docs](https://docs.datajoint.com/elements/element-lab/latest/api/element_lab/lab/)
 
 | Table | Description |
 | --- | --- |
@@ -47,7 +37,7 @@ schema, including `imaging_no_curation` and `imaging_preprocess`.
 
 - Although not required, most choose to connect the `Session` table to a `Subject` table.
 
-- For further details see the [subject schema API docs](https://datajoint.com/docs/elements/element-animal/latest/api/element_animal/subject/)
+- For further details see the [subject schema API docs](https://docs.datajoint.com/elements/element-animal/latest/api/element_animal/subject/)
 
 | Table | Description |
 | --- | --- |
@@ -55,7 +45,7 @@ schema, including `imaging_no_curation` and `imaging_preprocess`.
 
 ### `session` schema
 
-- For further details see the [session schema API docs](https://datajoint.com/docs/elements/element-session/latest/api/element_session/session_with_datetime/)
+- For further details see the [session schema API docs](https://docs.datajoint.com/elements/element-session/latest/api/element_session/session_with_datetime/)
 
 | Table | Description |
 | --- | --- |
@@ -63,7 +53,7 @@ schema, including `imaging_no_curation` and `imaging_preprocess`.
 
 ### `scan` schema
 
-- For further details see the [scan schema API docs](https://datajoint.com/docs/elements/element-calcium-imaging/latest/api/element_calcium_imaging/scan/)
+- For further details see the [scan schema API docs](https://docs.datajoint.com/elements/element-calcium-imaging/latest/api/element_calcium_imaging/scan/)
 
 | Table | Description |
 | --- | --- |
@@ -79,7 +69,7 @@ schema, including `imaging_no_curation` and `imaging_preprocess`.
 
 ### `imaging` schema
 
-- For further details see the [imaging schema API docs](https://datajoint.com/docs/elements/element-calcium-imaging/latest/api/element_calcium_imaging/imaging/)
+- For further details see the [imaging schema API docs](https://docs.datajoint.com/elements/element-calcium-imaging/latest/api/element_calcium_imaging/imaging/)
 
 | Table | Description |
 | --- | --- |
@@ -89,7 +79,6 @@ schema, including `imaging_no_curation` and `imaging_preprocess`.
 | MaskType | Available labels for segmented masks |
 | ProcessingTask | Task defined by a combination of Scan and ProcessingParamSet |
 | Processing | The core table that executes a ProcessingTask |
-| Curation | Curated results |
 | MotionCorrection | Results of the motion correction procedure |
 | MotionCorrection.RigidMotionCorrection | Details of the rigid motion correction performed on the imaging data |
 | MotionCorrection.NonRigidMotionCorrection | Details of nonrigid motion correction performed on the imaging data |
